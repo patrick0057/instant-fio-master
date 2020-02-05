@@ -30,6 +30,11 @@ if [[ -f /etc/lsb_release ]]; then
     echo You are using Ubuntu
     apt install -y gcc zlib1g-dev make git
 fi
+if cat /etc/os-release | grep -q Ubuntu; then
+    OS=ubuntu
+    echo You are using Ubuntu
+    apt install -y gcc zlib1g-dev make git
+fi
 if [[ -f /etc/redhat-release ]]; then
     OS=redhat
     echo You are using Red Hat
